@@ -5,15 +5,62 @@
 }
 
 body {
-    background: #241f2ccc;
+    background: #000000cc;
     font-family: 'Poppins', sans-serif;
     color: white;
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar{
+    display: block;
+    background: transparent;
+    width: 1.15rem;
+}
+
+::-webkit-scrollbar-track{
+    background: rgba(75, 73, 73, 0.781);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #747474c2;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #747474;
+}
+
+/* Animations */
+@keyframes textAppear{
+    from{
+        opacity: 0;
+        transform: translatey(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translatey(0);
+    }
+    50%{
+        transform: translatey(0.5rem);
+    }
+}
+
+.landingtext{
+    animation: textAppear 1s ease-out;
+}
+
+.scroll-down p{
+    animation: textAppear 1s linear;
+}
+
 .landing {
     background-color: #90a6cfc5;
-    height: 101vh;
+    height: 102vh;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -23,6 +70,8 @@ body {
     border-bottom-color: rgba(255, 255, 255, 0.72);
     background-image: url(images/beam_bg.jpg);
 
+    animation: appear 0.7s linear;
+    transition: 1s ease-out;
 }
 
 .landing_logos{
@@ -50,11 +99,16 @@ body {
 }
 
 .scroll-down p{
-    margin-bottom: .9rem;
+    margin-bottom: .6rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .scroll-down{
-    color: #f7faffe5
+    color: #f7faff73
+}
+
+.scroll-down i{
+    animation: bounce 2s infinite;
 }
 
 .about{
@@ -64,6 +118,11 @@ body {
     background-size: cover;
     background-position: center;
     font-family: monospace;
+}
+
+.renders{
+    height: 100vh;
+    width: 100%;
 }
 
 .navbar{
@@ -194,14 +253,14 @@ body {
 }
 
 .forum-post{
-    background-color: rgba(113, 107, 156, 0.473);
+    background-color: rgba(204, 196, 168, 0.473);
     width: 8px;
     height: 90px;
     border: none;
     position: absolute;
     left: 11.8%;
     top: 33%;
-
+    animation: textAppear 1s ease-out;
 }
 
 .hero-disclaimer{
