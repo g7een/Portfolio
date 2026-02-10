@@ -17,6 +17,13 @@ scrollTopbtn.addEventListener("click", () => {
 const aboutbtn = document.getElementById("about-btn");
 aboutbtn.addEventListener("click", () => {
     document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
+    console.log('pressed');
+});
+
+const renderbtn = document.querySelector(".renders");
+renderbtn.addEventListener("click", () => {
+    console.log('pressed');
+    document.querySelector(".renders").scrollIntoView({ behavior: 'smooth' });
 });
 
 const home = document.querySelector(".nav-home");
