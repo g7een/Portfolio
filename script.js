@@ -16,17 +16,24 @@ scrollTopbtn.addEventListener("click", () => {
 
 const aboutbtn = document.getElementById("about-btn");
 aboutbtn.addEventListener("click", () => {
+    console.log('aboutPressed');
     document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
-    console.log('pressed');
 });
 
-const renderbtn = document.querySelector(".renders");
+const renderbtn = document.getElementById("renders-btn");
 renderbtn.addEventListener("click", () => {
-    console.log('pressed');
+    console.log('rendersPressed');
     document.querySelector(".renders").scrollIntoView({ behavior: 'smooth' });
+});
+
+const otherbtn = document.getElementById("other-btn");
+otherbtn.addEventListener("click", () => {
+    console.log('otherPressed');
+    document.querySelector(".other").scrollIntoView({ behavior: 'smooth' });
 });
 
 const home = document.querySelector(".nav-home");
 home.addEventListener("click", () => {
     document.querySelector(".landing").scrollIntoView({ behavior: 'smooth' });
 });
+
