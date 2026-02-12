@@ -61,11 +61,6 @@ body {
         opacity: 1;
         scale: 1;
     }
-    100%{
-        transform: translateX(-30rem);
-        opacity: 0.2;
-        scale: 0.6;
-    }
 }
 
 @keyframes photoslide2{
@@ -75,14 +70,9 @@ body {
         scale: 0.6;
     }
     43%{
-        transform: translateX(-45rem);
+        transform: translateX(-40rem);
         opacity: 1;
         scale: 1;
-    }
-    100%{
-        transform: translateX(30rem);
-        opacity: 0.2;
-        scale: 0.6;
     }
 }
 
@@ -247,10 +237,52 @@ body {
     width: 100%;
 }
 
+.renders h2{
+    margin-left: 10%;
+    font-size: 1.15rem;
+    margin-top: 8%;
+    position: absolute;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right, #c3ccd6, #a3bbd8c8);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:0 0 10px #ffffff74;
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+}
+
+.renderdiv{
+    width: .35rem;
+    height: 1.3rem;
+    background-color: rgba(110, 169, 232, 0.248);
+    margin-left: 9.2%;
+    position: absolute;
+    margin-top: 8%;
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+}
+
 .other{
     height: 100vh;
     width: 100%;
     background-color: gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.bloghead{
+    position: absolute;
+    font-size: 1.55rem;
+    margin-left: 48%;
+    align-items: center;
+    width: 4rem;
+
+    margin-top: 2.5%;
+    
 }
 
 .navbar{
