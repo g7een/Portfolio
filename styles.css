@@ -56,13 +56,31 @@ body {
         opacity: 0.2;
         scale: 0.6;
     }
-    50%{
+    75%{
         transform: translateX(25rem);
         opacity: 1;
         scale: 1;
     }
     100%{
         transform: translateX(-30rem);
+        opacity: 0.2;
+        scale: 0.6;
+    }
+}
+
+@keyframes photoslide2{
+    0%{
+        transform: translateX(30rem);
+        opacity: 0.2;
+        scale: 0.6;
+    }
+    43%{
+        transform: translateX(-45rem);
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        transform: translateX(30rem);
         opacity: 0.2;
         scale: 0.6;
     }
@@ -152,6 +170,21 @@ body {
     animation-timeline: view();
 }
 
+.abouttext2 p{
+    padding: 0;
+    margin-left: 10%;
+    width: 40rem;
+    text-wrap-style: wrap;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+    position: absolute;
+
+    margin-top: 30%;
+}
+
 .about h2{
     font-size: 1.1rem;
 }
@@ -179,6 +212,33 @@ body {
     border-radius: 16px;
 
     animation: photoslide1 3s ease-in-out;
+    animation-timeline: view();
+}
+
+.aboutphoto2{
+    width: 16rem;
+    height: 16rem;
+    margin-top: 4rem;
+    transform: translateX(50%);
+    margin-left: 100vw;
+
+    background: transparent;
+    background-image: linear-gradient(
+        120 deg,
+        rgba(225, 225, 225, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-width: 0.0009rem;
+    border-color: rgba(225, 225, 225, 0.3);
+    border-style: solid;
+
+    z-index: 49;
+    box-shadow: 10px 5px 100px rgba(0,0,0,0.2);
+    border-radius: 16px;
+
+    animation: photoslide2 3s ease-in-out;
     animation-timeline: view();
 }
 
