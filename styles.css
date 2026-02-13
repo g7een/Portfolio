@@ -11,6 +11,86 @@ body {
     overflow-x: hidden;
 }
 
+
+.page{
+    opacity: 0;
+    animation: loadin 4.1s linear forwards;
+    animation-delay: 4.1s;
+   
+}
+
+@keyframes loadin{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/*Websie Loader*/
+
+.loader {
+    position: fixed;    
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent 30%, yellow);
+    animation: loader 4s linear;
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 35vh;
+    margin-left: 42vw;
+}
+
+.loader:before{
+    position: fixed;
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    left: 6px;
+    bottom: 6px;
+    background: #3e3d3d;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: linear-gradient(45deg, transparent, transparent 30%, yellow);
+    border-radius: 50%;
+    z-index: 1000;
+    z-index: 1;
+    filter: blur(30px);
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes loader{
+    0%{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
 ::-webkit-scrollbar{
     display: block;
     background: transparent;
@@ -274,6 +354,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+
 .bloghead{
     position: absolute;
     font-size: 1.55rem;
@@ -282,7 +363,48 @@ body {
     width: 4rem;
 
     margin-top: 2.5%;
+}
+
+.blogcontent{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.05rem;
+    width: 25rem;
+    margin-left: 10%;
+    padding-top: 12%;
+    position: absolute;
+}
+
+.post1{
+    animation: textAppear 0.3s ease-out;
+    animation-timeline: view();
     
+}
+
+.post2{
+    animation: textAppear 0.3s ease-out;
+    animation-timeline: view();
+}
+
+.date1 p{
+    font-size: 0.80rem;
+    animation-timeline: view();
+    animation: textAppear 0.3s ease-out;
+    animation-timeline: view();
+    margin-bottom: 2rem;
+
+}
+.date2 p{
+    font-size: 0.80rem;
+    animation: textAppear 0.3s ease-out;
+    animation-timeline: view();
+}
+
+.forum1{
+    margin-left: 8%;
+    margin-top: 120px;
+    width: 0.5rem;
+    height: 2rem;
+
 }
 
 .navbar{
@@ -458,3 +580,4 @@ body {
 .scroll-top:hover{
     text-shadow: 0 0 15px #ffffff;
 }
+
