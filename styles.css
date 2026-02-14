@@ -13,10 +13,8 @@ body {
 
 
 .page{
-    opacity: 0;
-    animation: loadin 4.1s linear forwards;
-    animation-delay: 4.1s;
-   
+    opacity: 1;
+
 }
 
 @keyframes loadin{
@@ -27,7 +25,19 @@ body {
         opacity: 1;
     }
 }
-/*Websie Loader*/
+
+.page {
+    opacity: 0; 
+    animation: pageFadeIn 1s ease forwards;
+    animation-delay: 4s; 
+}
+
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 
 .loader {
     position: fixed;    
@@ -35,60 +45,54 @@ body {
     height: 250px;
     border-radius: 50%;
     background: linear-gradient(45deg, transparent, transparent 30%, yellow);
-    animation: loader 4s linear;
-    
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
     margin-top: 35vh;
-    margin-left: 42vw;
+    margin-left: 43vw;
+
+    /* spin and fade out */
+    animation: spin 4s linear, fadeOut 0.5s forwards;
+    animation-delay: 0s, 4s; /* spin immediately, fade out after 4s */
 }
 
-.loader:before{
-    position: fixed;
+/* Inner circle */
+.loader:before {
     content: '';
     position: absolute;
     top: 6px;
     right: 6px;
-    left: 6px;
     bottom: 6px;
+    left: 6px;
     background: #3e3d3d;
     border-radius: 50%;
     z-index: 99;
 }
 
+/* Outer glow */
 .loader:after {
     content: '';
     position: absolute;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: linear-gradient(45deg, transparent, transparent 30%, yellow);
     border-radius: 50%;
-    z-index: 1000;
-    z-index: 1;
     filter: blur(30px);
+    z-index: 1;
 }
 
-@keyframes fadeOut{
-    0%{
-        opacity: 1
-    }
-    100%{
-        opacity: 0;
-    }
+/* SPIN ANIMATION */
+@keyframes spin {
+    from { transform: rotate(0deg); filter: hue-rotate(0deg); }
+    to { transform: rotate(360deg); filter: hue-rotate(360deg); }
 }
 
-@keyframes loader{
-    0%{
-        transform: rotate(0deg);
-        filter: hue-rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-        filter: hue-rotate(360deg);
-    }
+/* FADE OUT ANIMATION */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; display: none; } /* loader fades then disappears */
 }
 
 ::-webkit-scrollbar{
@@ -400,11 +404,21 @@ body {
 }
 
 .forum1{
-    margin-left: 8%;
-    margin-top: 120px;
+    margin-left: 9%;
+    top: 25%;
+    position: relative;
     width: 0.5rem;
-    height: 2rem;
+    height: 5.5rem;
+    background-color: rgba(130, 170, 196, 0.527);
+}
 
+.forum2{
+    margin-left: 9%;
+    margin-top: 15.5%;
+    position: relative;
+    width: 0.5rem;
+    height: 5.5rem;
+    background-color: rgba(130, 170, 196, 0.527);
 }
 
 .navbar{
