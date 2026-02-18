@@ -11,11 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-@media screen and (max-width: 768px){
-    .page{
-    }
-}
-
 @keyframes loadin{
     from{
         opacity: 0;
@@ -160,6 +155,7 @@ body {
     border-bottom: 0.2rem;
     border-color: rgba(255, 255, 255, 0.776);
     border-bottom-style :solid;
+    position: relative;
 }
 
 .abouttext p{
@@ -174,6 +170,8 @@ body {
     font-size: 1.1rem;
     animation: textAppear 0.2s ease-out;
     animation-timeline: view();
+
+    text-shadow: 0 0 10px #ffffffe5;
 }
 
 .abouttext2 p{
@@ -189,10 +187,25 @@ body {
     position: absolute;
 
     margin-top: 30%;
+
+    text-shadow: 0 0 10px #ffffffc5;
 }
 
 .about h2{
     font-size: 1.1rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: textAppear 0.3s ease-out;
+    animation-timeline: view();
+    text-shadow: 0 0 10px #ffffff81;
+}
+
+.othslink{
+    color: red;
+    text-decoration: none;
 }
 
 .aboutphoto1{
@@ -336,8 +349,10 @@ body {
 .hero{
     font-size: 1.1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
     justify-content: center;
     position: absolute;
+    text-shadow: 0 0 14px #ffffffe5;
 }
 
 .hero-description{
@@ -361,7 +376,7 @@ body {
     color: transparent;
     -webkit-text-fill-color: transparent;
 
-    text-shadow:0 0 16px #ffffffa8;
+    text-shadow:0 0 14px #ffffffc2;
 }
 
 .forum-post{
@@ -379,4 +394,29 @@ body {
     font-size: .6rem;
 }
 
+footer{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top-color: white;
+    border-top-style: solid;
+    border-top-width: .4vh;
+    border-top-color: rgba(255, 255, 255, 0.72);
+    background-color: rgb(53, 52, 52);
+    height: 10vh;
+}
 
+.footerdisc{
+    width: 100%;
+    opacity: .8;
+}
+
+.footerlinks{
+    text-decoration: none;
+    color: white;
+    text-decoration-color: white;
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+    
+    }
+}
