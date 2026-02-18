@@ -37,3 +37,17 @@ home.addEventListener("click", () => {
     document.querySelector(".landing").scrollIntoView({ behavior: 'smooth' });
 });
 
+
+
+
+const contactBtn = document.querySelector(".contactMe");
+const contactPanel = document.getElementById("contactPanel");
+const panelClose = document.querySelector(".panel-close");
+
+contactBtn.addEventListener("click", () => {
+    contactPanel.classList.add("active");
+});
+
+panelClose.addEventListener("click", () => {
+    contactPanel.classList.remove("active");
+});

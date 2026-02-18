@@ -198,13 +198,14 @@ body {
     text-align: center;
     padding-top: 5vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
     animation: textAppear 0.3s ease-out;
     animation-timeline: view();
-    text-shadow: 0 0 10px #ffffff81;
+    text-shadow: 0 0 10px #ffffff52;
 }
 
 .othslink{
-    color: red;
+    color: #ff9d00;
     text-decoration: none;
 }
 
@@ -400,20 +401,137 @@ footer{
     border-top-style: solid;
     border-top-width: .4vh;
     border-top-color: rgba(255, 255, 255, 0.72);
-    background-color: rgb(53, 52, 52);
-    height: 10vh;
+    background-color: rgba(53, 52, 52, 0.818);
+    height: 8vh;
 }
 
 .footerdisc{
     width: 100%;
     opacity: .8;
+    display: flex;
+    justify-content: center;
+    padding-top: 1vh;
 }
 
 .footerlinks{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.footerlinks a{
     text-decoration: none;
     color: white;
     text-decoration-color: white;
+    text-decoration: none;
+    padding: 1vh 10vw;
 }
+
+.contactMe{
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    margin-top: 80vh;
+    margin-left: 10vw;
+    width: 8vw;
+    height: 5vh;
+    border-radius: 12px;
+    background-color: rgba(53, 52, 52, 0);
+
+}
+.contacttext{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 250;
+    font-style: italic;
+}
+.contacttext i{
+    padding-right: .5vw;
+}
+.contacttext:hover{
+    font-size: 1.02rem;
+    text-shadow: 0 0 15px #ffffff7f;
+    cursor: pointer;
+}
+
+
+.contact-panel{
+    position: fixed;
+    left: -100%;
+    height: 100%;
+    width: 250px;
+    max-width: 40%;
+    background: rgba(30, 30, 30, 0.267);
+    backdrop-filter: blur(10px);
+    transition: left 0.4s ease;
+    z-index: 999;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.152);
+}
+
+.contact-panel.active{
+    left:0;
+    opacity: 1;
+}
+
+.panel-content{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-close{
+    font-size: 1.8rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.panel-content input{
+    background-color: #ffffff2b;
+    border-radius: 5px;
+    border-width: 5px;
+    outline: none;
+    height: 30px;
+    margin: 10px 0px;
+    width: 175px;
+    border: rgb(255, 255, 255);
+    padding: 10px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-content textarea{
+    background-color: #ffffff2b;
+    border-radius: 5px;
+    border-width: 5px;
+    resize: none;
+    width: 175px;
+    border: none;
+    padding: 10px;
+    margin: 10px 0px;
+    color: white;
+}
+
+.panel-content button{
+    background-color: #e69898;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    width: 175px;
+    height: 30px;
+    margin-top: 15px;
+    font-weight: 500;
+    color: white;
+}
+
 
 @media screen and (max-width: 768px){
     .hero{
