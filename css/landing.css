@@ -1,0 +1,127 @@
+@keyframes textAppear{
+    from{
+        opacity: 0;
+        transform: translatey(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translatey(0);
+    }
+    50%{
+        transform: translatey(0.5rem);
+    }
+}
+
+.landingtext{
+    animation: textAppear 1s linear;
+    padding-left: 10%;
+    padding-top: 25vh;
+}
+
+.scroll-down p{
+    animation: textAppear 1s linear;
+}
+
+.landing {
+    height: 102vh;
+    width: 100%;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
+    border-bottom-color: rgba(255, 255, 255, 0.72);
+
+    animation: appear 0.7s linear;
+    transition: 1s ease-out;
+}
+
+.landing_logos{
+    width: 1.1rem;
+    height: 1rem;
+    padding-top: 2px;
+    display: inline;
+    
+}
+
+.landing_logosos{
+    width: .8rem;
+    height: 1rem;
+    padding-top: 2px;
+}
+
+.content .landing a{
+    left: 50%;
+    transform: translatex(-50%);
+    position: absolute;
+    bottom: 50px;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.scroll-down p{
+    margin-bottom: .6rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.scroll-down{
+    color: #f7faff73
+}
+
+.scroll-down i{
+    animation: bounce 2s infinite;
+}
+
+/* Landing Hero */
+.hero{
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    position: absolute;
+    text-shadow: 0 0 14px #ffffffe5;
+}
+
+.hero-description{
+    font-size: 1.005rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 1.5rem;
+    padding-left: 3rem;
+    justify-content: center;
+    position: absolute;
+}
+
+.hero-contact{
+    font-size: 2rem;
+    color: #d4d393e5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    background-image: linear-gradient(to right, #d1cdcd, #ed403a, #f95325e5);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:0 0 14px #ffffffc2;
+}
+
+.forum-post{
+    background-color: rgba(204, 196, 168, 0.473);
+    width: 8px;
+    height: 90px;
+    border: none;
+    position: relative;
+    left: 11.7%;
+    top: 4%;
+    animation: textAppear 1s ease-out;
+}
+
+.hero-disclaimer{
+    font-size: .6rem;
+}
