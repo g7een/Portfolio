@@ -43,7 +43,6 @@
 }
 
 .nav-home:hover{
-    font-size:1.12rem;
     text-shadow: 0 0 30px #ffffff;
 }
 
@@ -77,7 +76,7 @@
 
 .nav-tabs a:hover{
     text-shadow: 0 0 15px #ffffff;
-    font-size:1.18rem;
+    text-decoration: underline;
 }
 
 .nav-tab {
@@ -144,4 +143,12 @@
 
 .scroll-top:hover{
     text-shadow: 0 0 15px #ffffff;
+}
+
+.nav-tab{
+    font-size: clamp(.9rem, 1vw, 2rem);
+}
+
+.nav-home{
+    font-size: clamp(.9rem, 1vw, 2rem);
 }

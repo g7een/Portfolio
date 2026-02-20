@@ -79,8 +79,9 @@ body {
 }
 
 .renders{
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 0;
 }
 
 .renders h2{
@@ -114,7 +115,9 @@ body {
 }
 
 .other{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 0;
     width: 100%;
     background-color: gray;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -143,7 +146,6 @@ body {
 .post1{
     animation: textAppear 0.1s ease-out;
     animation-timeline: view();
-    
 }
 
 .post2{
@@ -172,7 +174,7 @@ footer{
     border-top-width: .4vh;
     border-top-color: rgba(255, 255, 255, 0.72);
     background-color: rgba(53, 52, 52, 0.818);
-    height: 8vh;
+    height: auto;
 }
 
 .footerdisc{
@@ -307,4 +309,11 @@ footer{
     .abouttext p, .abouttext2 p{
         font-size: 0.9rem;
     }
+
+    .forum-post{
+        max-height: 45px;
+        width: 5px;
+        margin-left: 50vw;
+    }
+
 }

@@ -1,11 +1,11 @@
 @keyframes photoslide1{
     0%{
-        transform: translateX(-30rem);
+        transform: translateX(-30vw);
         opacity: 0.2;
         scale: 0.6;
     }
     75%{
-        transform: translateX(25rem);
+        transform: translateX(25vw);
         opacity: 1;
         scale: 1;
     }
@@ -13,12 +13,12 @@
 
 @keyframes photoslide2{
     0%{
-        transform: translateX(30rem);
+        transform: translateX(30vw);
         opacity: 0.2;
         scale: 0.6;
     }
     43%{
-        transform: translateX(-40rem);
+        transform: translateX(-40vw);
         opacity: 1;
         scale: 1;
     }
@@ -26,7 +26,9 @@
 
 .about{
     background-color: #4d5044f3;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 0;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -63,19 +65,20 @@
     text-shadow: 0 0 10px #ffffffe5;
 }
 
+
 .abouttext2 p{
+    display: flex;
     padding: 0;
-    margin-left: 10%;
-    width: 40rem;
-    text-wrap-style: wrap;
+    margin-left: 10vw;
+    position: absolute;
+    padding-top: 60vh;
+    max-width: 35vw;
 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1rem;
     animation: textAppear 0.1s ease-out;
     animation-timeline: view();
-    position: absolute;
 
-    margin-top: 30%;
 
     text-shadow: 0 0 10px #ffffffc5;
 }
