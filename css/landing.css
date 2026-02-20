@@ -128,7 +128,8 @@
     min-height: 90px;
     border: none;
     position: static;
-    margin-left: 11.7%;
+    margin-left: 13%;
+    margin-top: 11px;
     animation: textAppear 1s ease-out;
     display: flex;
 }

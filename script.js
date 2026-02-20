@@ -38,8 +38,6 @@ home.addEventListener("click", () => {
 });
 
 
-
-
 const contactBtn = document.querySelector(".contactMe");
 const contactPanel = document.getElementById("contactPanel");
 const panelClose = document.querySelector(".panel-close");

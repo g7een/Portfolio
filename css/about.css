@@ -1,11 +1,11 @@
 @keyframes photoslide1{
     0%{
-        transform: translateX(-30vw);
+        transform: translateX(-50vw);
         opacity: 0.2;
         scale: 0.6;
     }
     75%{
-        transform: translateX(25vw);
+        transform: translateX(10vw);
         opacity: 1;
         scale: 1;
     }
