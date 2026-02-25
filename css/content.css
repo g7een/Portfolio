@@ -532,24 +532,46 @@ body {
     background-color: rgba(66, 66, 66, 0.204);
     border-radius: 10px;
     align-items: center;
+    z-index: 10;
 }
 
-.navbtn1, .navbtn2, .navbtn3, .navbtn4{
+.navbtn{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(255, 255, 255, 0.171);
     display: flex;
     justify-content: space-evenly;
     margin: 0px 11px;
 }
 
-.navbtn1:hover, .navbtn2:hover, .navbtn3:hover, .navbtn4:hover{
-    width: 16px;
-    height: 16px;
-    box-shadow: 10px white;
+.navbtn:hover{
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.634);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.735);
+    transition: 0.2s ease;
     cursor: pointer;
 }
+
+.navbtn.active{
+    background-color: rgba(10, 158, 244, 0.683);
+    box-shadow: 0 0 8px rgba(1, 170, 255, 0.907);
+    transition: 0.6s ease;
+}
+
+.projectslide{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: green;
+    clip-path: circle(0.3% at 0 50%);
+}
+
+.projectslide1.active{
+    clip-path: circle(100% at 0 50%);
+}
+
 
 
 
@@ -780,64 +802,4 @@ footer{
         max-width: 15rem;
         max-height: 15rem
     }
-}
-
-
-.bloghead{
-    position: absolute;
-    font-size: 1.55rem;
-    margin-left: 48%;
-    align-items: center;
-    width: 4rem;
-
-    margin-top: 2.5%;
-}
-
-.blogcontent{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.05rem;
-    width: 25rem;
-    margin-left: 10%;
-    padding-top: 12%;
-    position: absolute;
-}
-
-.post1{
-    animation: textAppear 0.1s ease-out;
-    animation-timeline: view();
-}
-
-.post2{
-    animation: textAppear 0.1s ease-out;
-    animation-timeline: view();
-}
-
-
-.bloghead{
-    position: absolute;
-    font-size: 1.55rem;
-    margin-left: 48%;
-    align-items: center;
-    width: 4rem;
-
-    margin-top: 2.5%;
-}
-
-.blogcontent{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.05rem;
-    width: 25rem;
-    margin-left: 10%;
-    padding-top: 12%;
-    position: absolute;
-}
-
-.post1{
-    animation: textAppear 0.1s ease-out;
-    animation-timeline: view();
-}
-
-.post2{
-    animation: textAppear 0.1s ease-out;
-    animation-timeline: view();
 }
