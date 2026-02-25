@@ -517,22 +517,38 @@ body {
 .renders .bgk{
     width: 100vw;
     height: 100vh;
-    background-color: rgba(74, 63, 63, 0.574);
+    background-color: rgb(82, 82, 82);
     position: absolute;
 }
 
-.renders .nav{
+.nav{
+    margin-left: 45vw;
+    margin-top: 90vh;
     display: flex;
-    position: relative;
+    position: absolute;
     z-index: 100;
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(66, 66, 66, 0.204);
+    border-radius: 10px;
     align-items: center;
 }
 
-.navbtn1, .navbtn2, .navbtn3{
-    
+.navbtn1, .navbtn2, .navbtn3, .navbtn4{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.596);
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 11px;
+}
+
+.navbtn1:hover, .navbtn2:hover, .navbtn3:hover, .navbtn4:hover{
+    width: 16px;
+    height: 16px;
+    box-shadow: 10px white;
+    cursor: pointer;
 }
 
 
@@ -764,4 +780,64 @@ footer{
         max-width: 15rem;
         max-height: 15rem
     }
+}
+
+
+.bloghead{
+    position: absolute;
+    font-size: 1.55rem;
+    margin-left: 48%;
+    align-items: center;
+    width: 4rem;
+
+    margin-top: 2.5%;
+}
+
+.blogcontent{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.05rem;
+    width: 25rem;
+    margin-left: 10%;
+    padding-top: 12%;
+    position: absolute;
+}
+
+.post1{
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+}
+
+.post2{
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+}
+
+
+.bloghead{
+    position: absolute;
+    font-size: 1.55rem;
+    margin-left: 48%;
+    align-items: center;
+    width: 4rem;
+
+    margin-top: 2.5%;
+}
+
+.blogcontent{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.05rem;
+    width: 25rem;
+    margin-left: 10%;
+    padding-top: 12%;
+    position: absolute;
+}
+
+.post1{
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
+}
+
+.post2{
+    animation: textAppear 0.1s ease-out;
+    animation-timeline: view();
 }
