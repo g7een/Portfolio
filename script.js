@@ -50,23 +50,44 @@ panelClose.addEventListener("click", () => {
     contactPanel.classList.remove("active");
 });
 
+const slides = document.querySelector(".slides");
 const btns = document.querySelectorAll(".navbtn");
-var sliderNav = function(manual){
-    btns.forEach((btn) => {
-        btn.classList.remove("active");
-    });
 
-    slides.forEach((slide) => {
-        slide.classList.remove("active");
-    });
+let currentSlide = 0;
+
+function sliderNav(index) {
+    currentSlide = index;
+
+    slides.style.transform = `translateX(-${index * 100}vw)`;
 
     
-    btns[manual].classList.add("active");
-    slides[manual].classList.add("active");
+    btns.forEach(btn => btn.classList.remove("active"));
+    btns[index].classList.add("active");
 }
 
 btns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
         sliderNav(i);
-    })
-})
+    });
+});
+
+const menu = document.querySelector('.menu-container');
+
+menu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+
+const fileContent = document.getElementById("fileContent");
+
+document.querySelectorAll(".dropdown p").forEach(file => {
+    file.addEventListener("click", () => {
+        if(file.textContent.trim() === "info.txt") {
+            
+            fileContent.textContent = "standard mesh model example for weekly check. resize proof nonsense:                                                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo omnis accusantium voluptatum? Velit ut ratione cupiditate vel nemo magni voluptatem maxime, qui voluptatum nulla non blanditiis rerum dignissimos illum? Repellat. Aspernatur culpa sapiente consequatur velit totam dolor excepturi molestias ut possimus sequi libero quas fugit repellat consectetur, fugiat accusantium quis unde blanditiis ipsum, eum explicabo quam in quasi atque. Impedit!";
+        } 
+        else {
+            fileContent.textContent = `Selected file: ${file.textContent}`;
+        }
+    });
+});
