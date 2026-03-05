@@ -92,7 +92,25 @@ document.querySelectorAll(".dropdown p").forEach(file => {
     });
 });
 
-const meshreset = document.querySelector('.menuresetpos');
+
+let isResetting = false;
+let resetProgress = 0;
+const resetDuration = 1; 
+
+const meshResetBtn = document.querySelector('.meshresetpos');
+
+meshResetBtn.addEventListener('click', () => {
+
+    camera.position.copy(initialCameraPosition);
+
+    controls.target.copy(initialCameraTarget);
+    controls.update();
+
+    cube.position.copy(initialMeshPosition);
+    cube.rotation.copy(initialMeshRotation);
+
+});
+
 
 
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
@@ -139,6 +157,13 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 
+const initialCameraPosition = camera.position.clone();
+const initialCameraTarget = new THREE.Vector3(0, 0, 0);
+
+const initialMeshRotation = cube.rotation.clone();
+const initialMeshPosition = cube.position.clone();
+
+
 
 function animate() {
     requestAnimationFrame(animate);
@@ -152,5 +177,59 @@ window.addEventListener('resize', () => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
+});
+
+
+const lightR = document.getElementById("lightR");
+const lightG = document.getElementById("lightG");
+const lightB = document.getElementById("lightB");
+
+function updateLightColor() {
+    const r = lightR.value / 255;
+    const g = lightG.value / 255;
+    const b = lightB.value / 255;
+
+    directionalLight.color.setRGB(r, g, b);
+}
+
+lightR.addEventListener("input", updateLightColor);
+lightG.addEventListener("input", updateLightColor);
+lightB.addEventListener("input", updateLightColor);
+
+
+const lightX = document.getElementById("lightX");
+const lightY = document.getElementById("lightY");
+const lightZ = document.getElementById("lightZ");
+
+function updateLightPosition() {
+    directionalLight.position.set(
+        parseFloat(lightX.value),
+        parseFloat(lightY.value),
+        parseFloat(lightZ.value)
+    );
+}
+
+lightX.addEventListener("input", updateLightPosition);
+lightY.addEventListener("input", updateLightPosition);
+lightZ.addEventListener("input", updateLightPosition);
+
+const lightMenu = document.querySelector('.lightmenu');
+const lightDropdown = document.querySelector('.light-dropdown');
+
+lightMenu.addEventListener('click', (e) => {
+
+    // Prevent bubbling to document
+    e.stopPropagation();
+
+    lightMenu.classList.toggle('active');
+
+});
+
+lightDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+document.addEventListener('click', () => {
+    lightMenu.classList.remove('active');
 });
 

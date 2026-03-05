@@ -747,9 +747,105 @@ body {
     transition: 0.3s ease;
 }
 
-.light-dropdown{
-    
+.light-dropdown {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 150px;
 
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    pointer-events: none;
+}
+
+.light-dropdown {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.light-dropdown label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.8);
+    gap: 6px;
+}
+
+.light-dropdown input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px; /* thinner */
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+}
+
+
+.light-dropdown input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.18);
+}
+
+.light-dropdown input[type="range"]::-moz-range-track {
+    height: 4px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.18);
+}
+
+.light-dropdown input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-top: -5px; 
+
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(255,255,255,0.6);
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.3);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.light-dropdown input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.95);
+}
+
+/* Hover polish */
+.light-dropdown input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.15);
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.35);
+}
+
+
+.lightmenu.active .light-dropdown {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .meshresetpos p{
