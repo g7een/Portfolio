@@ -93,10 +93,6 @@ document.querySelectorAll(".dropdown p").forEach(file => {
 });
 
 
-let isResetting = false;
-let resetProgress = 0;
-const resetDuration = 1; 
-
 const meshResetBtn = document.querySelector('.meshresetpos');
 
 meshResetBtn.addEventListener('click', () => {
