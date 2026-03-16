@@ -386,7 +386,7 @@ body {
         rgba(225, 225, 225, 0.3),
         rgba(0, 0, 0, 0.2)
     );
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 
     border-bottom: 0.2rem;
     border-color: rgba(255, 255, 255, 0.776);
@@ -911,7 +911,7 @@ body {
 .slide:nth-child(4) { 
     background: red; 
 }
-/*---------------------------*/
+/* --------------------------- */
 
 
 
@@ -1002,8 +1002,108 @@ body {
     background: red; 
 }
 
-/*------------------------------*/
+/* ------------------------------ */
 
+
+/* INF CAROUSEL + CALENDAR SECTION */
+.contact {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+    padding: 2rem 0;
+    width: 100%;
+
+    background: transparent;
+    background-image: linear-gradient(
+        120 deg,
+        rgba(225, 225, 225, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    backdrop-filter: blur(10px);
+}
+
+.contact-header{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:15%;
+    transform: translatex(-50%);
+    font-weight: 500;
+
+    text-shadow: 0 0 20px #ffffffec;
+    display: flex;
+    gap: 10px;
+}
+
+.contact-header i{
+    transform: translateY(20%);
+}
+
+.scroller-container{
+    position: absolute;
+    height: 220px;
+    width: 110%;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: transparent;
+    background-image: linear-gradient(
+        120 deg,
+        rgba(225, 225, 225, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-width: 0.0009rem;
+    border-color: rgba(225, 225, 225, 0.3);
+    border-style: solid;
+
+    z-index: 2;
+    box-shadow: 10px 5px 100px rgba(0,0,0,0.2);
+    
+}
+
+.calendar-container{
+    position: absolute;
+    height: 550px;
+    left: 30%;
+    width: 75%;
+
+    background: transparent;
+    background-image: linear-gradient(
+        120 deg,
+        rgba(225, 225, 225, 0.3),
+        rgba(0, 0, 0, 0.2)
+    );
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-width: 0.0009rem;
+    border-color: rgba(225, 225, 225, 0.3);
+    border-style: solid;
+
+    z-index: 2;
+    box-shadow: 10px 5px 100px rgba(0,0,0,0.2);
+
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- */
 
 /* OTHER (WEBSITE BLOG) */
 .other{
