@@ -1043,7 +1043,7 @@ body {
 .scroller-container{
     position: absolute;
     height: 220px;
-    width: 110%;
+    width: 100%;
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
@@ -1058,12 +1058,58 @@ body {
     -webkit-backdrop-filter: blur(5px);
     border-width: 0.0009rem;
     border-color: rgba(225, 225, 225, 0.3);
-    border-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
 
     z-index: 2;
     box-shadow: 10px 5px 100px rgba(0,0,0,0.2);
     
 }
+
+.testimonial-carousel{
+    position: absolute;
+    height: 220px;
+    width: 100%;
+    gap: 2em;
+    display: flex;
+    overflow-x: auto;
+}
+
+.testimonial-carousel .card{
+    animation: testimonial-spin 5s infinite linear;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-carousel .card{
+    position: relative;
+    height: 190px;
+    padding: 20px;
+    margin: auto 0;
+    flex: 0 0 15em;
+    border-width: 0.122rem;
+    border-color: rgba(204, 200, 200, 0.911);
+    border-style: solid;
+    border-radius: 20px;
+    
+    background: linear-gradient(
+        to right,
+        #848baa7d,
+        #b1b9dbbe
+    );
+    opacity: 1;
+}
+
+
+@keyframes testimonial-spin {
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+
+
 
 .calendar-container{
     position: absolute;
