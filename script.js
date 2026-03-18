@@ -26,6 +26,12 @@ renderbtn.addEventListener("click", () => {
     document.querySelector(".renders").scrollIntoView({ behavior: 'smooth' });
 });
 
+const contact = document.getElementById("contact-btn");
+contact.addEventListener("click", () => {
+    console.log('contactPressed');
+    document.querySelector(".contact").scrollIntoView({ behavior: 'smooth' });
+});
+
 const otherbtn = document.getElementById("other-btn");
 otherbtn.addEventListener("click", () => {
     console.log('otherPressed');

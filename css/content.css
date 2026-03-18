@@ -109,7 +109,7 @@ body {
 }
 
 .nav-home{
-    font-size: clamp(.9rem, 1vw, 2rem);
+    font-size: .9rem;
     border-radius: 16px;
     background:linear-gradient(
         to right,
@@ -229,7 +229,7 @@ body {
 }
 
 .nav-tab{
-    font-size: clamp(.9rem, 1vw, 2rem);
+    font-size: .9rem;
 }
 
 /*---------------------*/
@@ -390,7 +390,6 @@ body {
 
     border-bottom: 0.2rem;
     border-color: rgba(255, 255, 255, 0.776);
-    border-bottom-style :solid;
     position: relative;
 }
 
@@ -1043,6 +1042,9 @@ body {
 
 
 
+.testimonial-quote {
+    font-size: 1.4rem;
+}
 
 .scroller-container {
     position: absolute;
@@ -1082,7 +1084,6 @@ body {
     animation-play-state: paused;
 }
 
-
 .card {
     height: 190px;
     padding: 20px;
@@ -1094,9 +1095,13 @@ body {
 
     background: linear-gradient(
         to right,
-        #848baa7d,
-        #b1b9dbbe
+        #848baa54,
+        #b1b9db62
     );
+
+    font-family: "Italiana", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 
 @keyframes scroll {
