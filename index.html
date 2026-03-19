@@ -190,15 +190,117 @@
 
                     </div>
 
-                    <div class="slide">Project 2
+                    <div class="slide">
+                        <div class="slide alt-layout">
+                            <h2>Project 2</h2>
 
+                            <div class="menu-container">
+                                <div class="menu-icon">
+                                    browse
+                                    <i class="fa-solid fa-bars"></i>
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+
+                                <div class="dropdown">
+                                    <p>file_01.obj</p>
+                                    <p>file_02.mtl</p>
+                                    <p>textures.png</p>
+                                    <p>info.txt</p>
+                                </div>
+                            </div>
+
+                            <div class="file-panel">
+                                <h3>file viewer</h3>
+                                <p class="fileContent">choose a file to view</p>
+                            </div>
+
+                            <section class="threeSection">
+                                <h3>view<i class="fa-solid fa-circle-nodes"></i></h3> 
+                                <div class="container3D"></div>
+
+                                <div class="meshbtns">
+                                    <div class="meshresetpos"><p>reset mesh</p></div>
+
+                                    <div class="lightmenu">
+                                        <p>Open Light Menu</p>
+                                        <div class="light-dropdown">
+                                            <label>R <input type="range" class="lightR" min="0" max="255" value="255"></label>
+                                            <label>G <input type="range" class="lightG" min="0" max="255" value="255"></label>
+                                            <label>B <input type="range" class="lightB" min="0" max="255" value="255"></label>
+
+                                            <hr>
+
+                                            <label>X <input type="range" class="lightX" min="-20" max="20" step="0.1" value="5"></label>
+                                            <label>Y <input type="range" class="lightY" min="-20" max="20" step="0.1" value="10"></label>
+                                            <label>Z <input type="range" class="lightZ" min="-20" max="20" step="0.1" value="5"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <div class="project-desc">
+                                <p class="para">Project 2 description...</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="slide">Project 3
+                    <div class="slide">
+                        <div class="slide split-layout">
+                            <div class="left-panel">
+                                <h2>Project 3</h2>
+                                <p class="para">layout</p>
 
+                                <div class="menu-container">
+                                    <div class="menu-icon">browse</div>
+                                    <div class="dropdown">
+                                        <p>file_01.obj</p>
+                                        <p>textures.png</p>
+                                        <p>info.txt</p>
+                                    </div>
+                                </div>
+
+                                <div class="file-panel">
+                                    <p class="fileContent">choose a file</p>
+                                </div>
+                            </div>
+
+                            <div class="right-panel">
+                                <div class="container3D"></div>
+
+                                <div class="overlay-controls">
+                                    <div class="meshresetpos">reset</div>
+                                    <div class="lightmenu">light</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="slide">Project 4
+                    <div class="slide">
+                        <div class="slide centered-layout">
+                            <h2>Project 4</h2>
+
+                            <div class="glass-panel">
+
+                                <div class="container3D"></div>
+
+                                <div class="controls-row">
+                                    <div class="meshresetpos">reset</div>
+                                    <div class="lightmenu">light</div>
+                                </div>
+
+                                <div class="menu-container">
+                                    <div class="menu-icon">files</div>
+                                    <div class="dropdown">
+                                        <p>file_01.obj</p>
+                                        <p>textures.png</p>
+                                    </div>
+                                </div>
+
+                                <div class="file-panel">
+                                    <p class="fileContent">preview here</p>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -246,7 +348,24 @@
 
 
                 <div class="calendar-container">
-                    
+                    <div class="calendar-panel">
+                        <div class="calendar-header">
+                            <button id="prevMonth">‹</button>
+                            <h3 id="monthYear"></h3>
+                            <button id="nextMonth">›</button>
+                        </div>
+
+                        <div class="calendar-days">
+                            <div>Sun</div><div>Mon</div><div>Tue</div>
+                            <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                        </div>
+
+                        <div class="calendar-dates" id="calendarDates"></div>
+                        <div id="eventPanel" class="event-panel">
+                            <p>Select a day to view events</p>
+                        </div>
+
+                    </div>
                 </div>
             </section>
 

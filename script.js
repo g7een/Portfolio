@@ -85,15 +85,38 @@ menu.addEventListener('click', () => {
 
 
 const fileContent = document.getElementById("fileContent");
+const fileMap = {
+    "file_01.obj": {
+        type: "image",
+        src: "project1_images/sketch_example.jpg"
+    },
+    "textures.png": {
+        type: "image",
+        src: "project1_images/uvmap_example.png"
+    },
+    "file_02.mtl": {
+        type: "text",
+        content: "Material file: defines surface properties, lighting response, and textures."
+    },
+    "info.txt": {
+        type: "text",
+        content: "standard mesh model example for weekly check. resize proof nonsense: Lorem ipsum dolor sit amet consectetur adipisicing elit..."
+    }
+};
 
 document.querySelectorAll(".dropdown p").forEach(file => {
     file.addEventListener("click", () => {
-        if(file.textContent.trim() === "info.txt") {
-            
-            fileContent.textContent = "standard mesh model example for weekly check. resize proof nonsense:                                                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo omnis accusantium voluptatum? Velit ut ratione cupiditate vel nemo magni voluptatem maxime, qui voluptatum nulla non blanditiis rerum dignissimos illum? Repellat. Aspernatur culpa sapiente consequatur velit totam dolor excepturi molestias ut possimus sequi libero quas fugit repellat consectetur, fugiat accusantium quis unde blanditiis ipsum, eum explicabo quam in quasi atque. Impedit!";
-        } 
-        else {
-            fileContent.textContent = `Selected file: ${file.textContent}`;
+        const name = file.textContent.trim();
+        const fileData = fileMap[name];
+
+        if (!fileData) return;
+
+        if (fileData.type === "image") {
+            fileContent.innerHTML = `
+                <img src="${fileData.src}" alt="${name}" class="viewer-img">
+            `;
+        } else {
+            fileContent.textContent = fileData.content;
         }
     });
 });
@@ -219,10 +242,7 @@ const lightMenu = document.querySelector('.lightmenu');
 const lightDropdown = document.querySelector('.light-dropdown');
 
 lightMenu.addEventListener('click', (e) => {
-
-    // Prevent bubbling to document
     e.stopPropagation();
-
     lightMenu.classList.toggle('active');
 
 });
@@ -234,4 +254,123 @@ lightDropdown.addEventListener('click', (e) => {
 document.addEventListener('click', () => {
     lightMenu.classList.remove('active');
 });
+
+
+
+
+/* ------------------- CALENDAR FUNCTIONS -------------------- */
+
+const events = {
+    "2026-03-18": [
+        {title: "Got calendar working", desc: "Epic calendar functions"},
+        {title: "Second Event", desc: "nothing to see"}
+    ],
+    "2026-03-19": [
+        {title: "Independent Study Check", desc: "yep"}
+    ]
+};
+
+
+
+const datesEl = document.getElementById("calendarDates");
+const monthYear = document.getElementById("monthYear");
+const eventPanel = document.getElementById("eventPanel");
+
+let date = new Date();
+
+function formatDate(year, month, day) {
+    return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function renderCalendar() {
+    datesEl.innerHTML = "";
+
+    const year = date.getFullYear();
+    const month = date.getMonth();
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    monthYear.textContent = date.toLocaleString("default", {
+        month: "long",
+        year: "numeric"
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        datesEl.appendChild(document.createElement("div"));
+    }
+
+    for (let i = 1; i <= lastDate; i++) {
+        const dayEl = document.createElement("div");
+        dayEl.classList.add("day");
+
+        const dateKey = formatDate(year, month, i);
+
+        dayEl.innerHTML = `
+            <span class="day-number">${i}</span>
+            <div class="event-dots"></div>
+        `;
+
+        if (
+            i === new Date().getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear()
+        ) {
+            dayEl.classList.add("today");
+        }
+
+        if (events[dateKey]) {
+            const dots = dayEl.querySelector(".event-dots");
+
+            events[dateKey].forEach(() => {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                dots.appendChild(dot);
+            });
+        }
+
+        dayEl.addEventListener("click", () => {
+            document.querySelectorAll(".day").forEach(d => d.classList.remove("selected"));
+            dayEl.classList.add("selected");
+
+            showEvents(dateKey);
+        });
+
+        datesEl.appendChild(dayEl);
+    }
+}
+
+function showEvents(dateKey) {
+    eventPanel.innerHTML = "";
+
+    if (!events[dateKey]) {
+        eventPanel.innerHTML = `<p>No events</p>`;
+        return;
+    }
+
+    events[dateKey].forEach(event => {
+        const div = document.createElement("div");
+        div.classList.add("event-item");
+
+        div.innerHTML = `
+            <strong>${event.title}</strong>
+            <p>${event.desc}</p>
+        `;
+
+        eventPanel.appendChild(div);
+    });
+}
+
+
+document.getElementById("prevMonth").onclick = () => {
+    date.setMonth(date.getMonth()-1);
+    renderCalendar();
+};
+
+document.getElementById("nextMonth").onclick = () => {
+    date.setMonth(date.getMonth()+1);
+    renderCalendar();
+};
+
+renderCalendar();
 

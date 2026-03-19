@@ -585,20 +585,26 @@ body {
 .slide:nth-child(1) { 
     background: rgb(161, 160, 160);
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 20px 200px;
 }
+
 .slide:nth-child(1) h2{
     font-weight: 520;
-    left: 5%;
-    top: 10%;
-    position: absolute;
     text-shadow: 0 0 15px #ffffff9f;
-    width: 400px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
 }
 
 .menu-container{
-    position: absolute;
-    top: 20%;
-    left: 5%;
+    position: relative;
+    top: auto;
+    left: auto;
     display: inline-block;
 }
 
@@ -661,20 +667,22 @@ body {
 }
 
 .file-panel {
-    width: 500px;
+    flex: 1 1 300px;
+    max-width: 500px;
+    min-width: 250px;
+    width: 100%;
     min-height: 200px;
     background-color: #e0e0e028;
     backdrop-filter: blur(5px);
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    position: absolute;
-    left: 20%;
-    top: 10%;
     border-radius: 20px;
     border-color: rgba(255, 255, 255, 0.549);
     border-width: 2px;
     border-style: solid;
+    position: relative;
+    left: auto;
+    top: auto;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 .file-panel h3 {
@@ -690,49 +698,54 @@ body {
 }
 
 #threeSection {
+    flex: 1 1 300px;
+    max-width: 500px;
+    min-width: 250px;
+    width: 100%;
     height: 30vh;
-    width: 30vw;
-    right: 25%;
-    top: 7%;
-    border-radius: 20px;
-    transform: translateX(50%);
-    position: absolute;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+}
+
+.meshbtns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .meshresetpos{
     width: 100px;
     height: 50px;
-    position: absolute;
-    top: 30vh;
-    left: 10px;
+    position: relative;
+    top: auto;
+    left: auto;
     cursor: pointer;
-    
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-width: 0.0009rem;
     border-color: rgba(225, 225, 225, 0.3);
     border-style: solid;
     border-radius: 25px;
-
     z-index: 50;
-     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.098);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.098);
 }
 
 .lightmenu{
     width: 150px;
     height: 50px;
-    position: absolute;
-    top: 30vh;
-    left: 140px;
+    position: relative;
+    top: auto;
+    left: auto;
     cursor: pointer;
-    
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-width: 0.0009rem;
     border-color: rgba(225, 225, 225, 0.3);
     border-style: solid;
     border-radius: 25px;
-
     z-index: 50;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.098);
 }
@@ -751,26 +764,17 @@ body {
     top: 55px;
     left: 0;
     width: 150px;
-
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
+
     border-radius: 12px;
-
     overflow: hidden;
-
     max-height: 0;
     opacity: 0;
+
     transform: translateY(-10px);
-
-    transition:
-        max-height 0.35s ease,
-        opacity 0.25s ease,
-        transform 0.25s ease;
-
+    transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
-}
-
-.light-dropdown {
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -789,12 +793,11 @@ body {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 4px; 
+    height: 4px;
     background: transparent;
     cursor: pointer;
     margin: 0;
 }
-
 
 .light-dropdown input[type="range"]::-webkit-slider-runnable-track {
     height: 4px;
@@ -813,14 +816,10 @@ body {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    margin-top: -5px; 
-
+    margin-top: -5px;
     background: rgba(255,255,255,0.95);
     border: 1px solid rgba(255,255,255,0.6);
-
-    box-shadow:
-        0 2px 6px rgba(0,0,0,0.3);
-
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -834,8 +833,7 @@ body {
 
 .light-dropdown input[type="range"]:hover::-webkit-slider-thumb {
     transform: scale(1.15);
-    box-shadow:
-        0 3px 8px rgba(0,0,0,0.35);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.35);
 }
 
 .lightmenu.active .light-dropdown {
@@ -858,9 +856,9 @@ body {
 }
 
 #container3D {
-    width: 30vw; 
-    height: 30vh;
-    position: absolute; 
+    width: 100%;
+    height: 100%;
+    position: relative;
     border-width: 2px;
     border-style: solid;
     opacity: 1;
@@ -876,7 +874,6 @@ body {
     width: 100%;
     height: 100%;
     display: block;
-    
 }
 
 .project-desc .para{
@@ -889,9 +886,6 @@ body {
     margin-left: 60px;
 }
 
-.project-desc{
-    margin-top: 400px;
-}
 
 .slide:nth-child(1) i{
     position: relative;
@@ -902,106 +896,98 @@ body {
 }
 
 .slide:nth-child(2) { 
-    background: blue; 
+
 }
+
+.alt-layout{
+    flex-direction: row-reverse;
+}
+
 .slide:nth-child(3) { 
     background: purple;
 }
-.slide:nth-child(4) { 
-    background: red; 
-}
-/* --------------------------- */
 
-
-
-.light-dropdown input[type="range"]::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.95);
-}
-
-.light-dropdown input[type="range"]:hover::-webkit-slider-thumb {
-    transform: scale(1.15);
-    box-shadow:
-        0 3px 8px rgba(0,0,0,0.35);
-}
-
-.lightmenu.active .light-dropdown {
-    max-height: 500px;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.meshresetpos p{
+.split-layout {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-    font-size: .9rem;
-}
-
-#threeSection i{
     padding: 0;
 }
 
-#container3D {
-    width: 30vw; 
-    height: 30vh;
-    position: absolute; 
-    border-width: 2px;
-    border-style: solid;
-    opacity: 1;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    border-color: rgba(255, 255, 255, 0.549);
-    font-weight: 400;
-    cursor: crosshair;
+.left-panel {
+    width: 40%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-#container3D canvas {
-    position: absolute;
+.right-panel {
+    width: 60%;
+    position: relative;
+}
+
+.right-panel .container3D {
     width: 100%;
     height: 100%;
-    display: block;
-    
 }
 
-.project-desc .para{
-    font-family: 'Poppins', sans-serif;
-    font-style: italic;
-    width: 50vw;
-    font-size: clamp(0.6em, 2vw, 1.2rem);
-    opacity: 0.65;
+.overlay-controls {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
     display: flex;
-    margin-left: 60px;
+    gap: 10px;
 }
 
-.project-desc{
-    margin-top: 400px;
-}
 
-.slide:nth-child(1) i{
-    position: relative;
-    left: 5%;
-    top: 10%;
-    max-width: 20px;
-    max-height: 20px;
-}
-
-.slide:nth-child(2) { 
-    background: blue; 
-}
-.slide:nth-child(3) { 
-    background: purple;
-}
 .slide:nth-child(4) { 
     background: red; 
+}
+
+.centered-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glass-panel {
+    width: 70%;
+    max-width: 900px;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.glass-panel .container3D {
+    height: 300px;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+@media (max-width: 900px) {
+    .slide:nth-child(1) {
+        flex-direction: column;
+    }
 }
 
 /* ------------------------------ */
+
+
+
+
 
 
 /* INF CAROUSEL + CALENDAR SECTION */
@@ -1077,7 +1063,7 @@ body {
     width: max-content;
     margin-top: 13px;
 
-    animation: scroll 25s linear infinite;
+    animation: scroll 35s linear infinite;
 }
 
 .track:hover {
@@ -1115,36 +1101,159 @@ body {
 
 
 
-
-
-.calendar-container{
+/* --------- CALENDAR FUNCTION --------- */
+.calendar-container {
     position: absolute;
-    height: 550px;
+    top: 0;
     left: 30%;
-    width: 75%;
+    width: 65%;
+    height: 550px;
 
-    background: transparent;
-    background-image: linear-gradient(
-        120 deg,
-        rgba(225, 225, 225, 0.3),
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        120deg,
+        rgba(225, 225, 225, 0.25),
         rgba(0, 0, 0, 0.2)
     );
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-width: 0.0009rem;
-    border-color: rgba(225, 225, 225, 0.3);
-    border-style: solid;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-    z-index: 2;
+    border: 1px solid rgba(225, 225, 225, 0.2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
     box-shadow: 10px 5px 100px rgba(0,0,0,0.2);
-
-    border-radius: 20px;
+    z-index: 10;
 }
 
+.calendar-panel {
+    width: 95%;
+    height: 90%;
 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
+    color: white;
+}
 
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
 
+.calendar-header button {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: 0.2s;
+}
+
+.calendar-header button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    flex: 1;
+}
+
+.calendar-dates div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-dates div:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+.today {
+    background: rgba(255,255,255,0.4) !important;
+    color: black;
+}
+
+.calendar-dates div:empty {
+    background: transparent;
+    cursor: default;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+}
+
+.day-number {
+    font-size: 14px;
+}
+
+.event-dots {
+    display: flex;
+    gap: 3px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.selected {
+    background: rgba(255,255,255,0.3) !important;
+}
+
+.event-panel {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.event-item {
+    margin-bottom: 8px;
+}
+
+.event-item p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* --------------------------------------- */
 
 
 
