@@ -288,7 +288,7 @@ function renderCalendar() {
     const year = date.getFullYear();
     const month = date.getMonth();
 
-    const firstDay = new Date(year, month, 1).getDay();
+    const firstDay = new Date(year,month,1).getDay();
     const lastDate = new Date(year, month + 1, 0).getDate();
 
     monthYear.textContent = date.toLocaleString("default", {
@@ -352,7 +352,8 @@ function showEvents(dateKey) {
         const div = document.createElement("div");
         div.classList.add("event-item");
 
-        div.innerHTML = `
+        div.innerHTML = 
+        `
             <strong>${event.title}</strong>
             <p>${event.desc}</p>
         `;

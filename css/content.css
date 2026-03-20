@@ -160,6 +160,7 @@ body {
 .nav-tabs a:hover{
     text-shadow: 0 0 15px #ffffff;
     text-decoration: underline;
+    transition: 0.3s ease;
 }
 
 .nav-tab {
@@ -576,10 +577,14 @@ body {
     font-size: 1.15rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    border-bottom: 0.2rem;
-    border-color: rgba(255, 255, 255, 0.776);
-    border-bottom-style :solid;
+    border-bottom: 0.009rem;
+    border-color: rgba(255, 255, 255, 0.515);
+    border-bottom-style: solid;
+    border-right-style: solid;
 }
+
+
+
 
 /* !-----------------! PROJECT SHOWCASE SLIDES !-----------------! */
 .slide:nth-child(1) { 
@@ -883,7 +888,8 @@ body {
     font-size: clamp(0.6em, 2vw, 1.2rem);
     opacity: 0.65;
     display: flex;
-    margin-left: 60px;
+    margin-left: 20px;
+    margin-top: 40px;
 }
 
 
@@ -949,6 +955,10 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.slide.centered-layout h2{
+    position: absolute;
+
+}
 
 .glass-panel {
     width: 70%;
@@ -990,6 +1000,10 @@ body {
 
 
 
+
+
+
+
 /* INF CAROUSEL + CALENDAR SECTION */
 .contact {
     position: relative;
@@ -1024,8 +1038,6 @@ body {
 .contact-header i{
     transform: translateY(20%);
 }
-
-
 
 
 .testimonial-quote {
@@ -1088,7 +1100,18 @@ body {
     font-family: "Italiana", sans-serif;
     font-size: 1.2rem;
     font-weight: 300;
+    transition: .2s ease-in-out;
 }
+
+.card:hover {
+    text-shadow: 0 0 15px #ffffffbc;
+    cursor:help;
+    transition: .2s ease-in-out;
+    transform: translateY(-2.5px);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.134);
+}
+
+
 
 @keyframes scroll {
     from {
@@ -1489,3 +1512,39 @@ footer{
         max-height: 15rem
     }
 }
+
+footer{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top-color: white;
+    border-top-style: solid;
+    border-top-width: .4vh;
+    border-top-color: rgba(255, 255, 255, 0.72);
+    background-color: rgba(53, 52, 52, 0.818);
+    height: auto;
+}
+
+/*
+.footerdisc{
+    width: 100%;
+    opacity: .8;
+    display: flex;
+    justify-content: center;
+    padding-top: 1vh;
+}
+
+.footerlinks{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.footerlinks a{
+    text-decoration: none;
+    color: white;
+    text-decoration-color: white;
+    text-decoration: none;
+    padding: 1vh 10vw;
+    display: flex;
+    text-wrap-mode: nowrap;
+}/*
