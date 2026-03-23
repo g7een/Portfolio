@@ -267,6 +267,9 @@ const events = {
     ],
     "2026-03-19": [
         {title: "Independent Study Check", desc: "yep"}
+    ],
+    "2026-09-05": [
+        {title: "September 5th", desc: "yujin slime out"}
     ]
 };
 
