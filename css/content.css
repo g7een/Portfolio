@@ -182,6 +182,17 @@ body {
     opacity: .9;
 }
 
+.nav-bear {
+    width: 40px;
+    position: fixed;
+    top: 1.1%;
+    z-index: 20;
+    
+    animation: animateNavBear 10s linear forwards;
+    animation-timeline: scroll();
+    left: 60%;
+}
+
 .tab-content {
   display: none;
 }
@@ -233,6 +244,15 @@ body {
 
 .nav-tab{
     font-size: .9rem;
+}
+
+@keyframes animateNavBear {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1050%);
+    }
 }
 
 /*---------------------*/
@@ -334,8 +354,9 @@ body {
     font-size: 2rem;
     color: #d4d393e5;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
 
-    background-image: linear-gradient(to right, #d1cdcd, #ed403a, #f95325e5);
+    background-image: linear-gradient(to right, #d1cdcd, #f0f0f0dd, #c97682);
     background-clip: text;
     -webkit-background-clip: text;
 
@@ -521,6 +542,9 @@ body {
     position: relative;
 }
 
+.navbar-container {
+    position: absolute;
+}
 
 .nav {
     position: absolute;
