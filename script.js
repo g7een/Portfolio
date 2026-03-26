@@ -268,9 +268,6 @@ const events = {
     "2026-03-19": [
         {title: "Independent Study Check", desc: "yep"}
     ],
-    "2026-09-05": [
-        {title: "September 5th", desc: "yujin slime out"}
-    ]
 };
 
 
@@ -378,3 +375,76 @@ document.getElementById("nextMonth").onclick = () => {
 
 renderCalendar();
 
+
+// ------- CAROUSEL SCROLL ANIMS ----------- //
+const track = document.querySelector('.track');
+const containerS = document.querySelector('.scroller-container');
+
+let position = 0;
+let speed = 0.5;
+
+let isDragging = false;
+let lastX = 0;
+let velocity = 0;
+
+function getLoopWidth() {
+    return track.scrollWidth / 2;
+}
+
+function animateCarousel() {
+    if (!isDragging) {
+        position -= speed;
+        position += velocity;
+        velocity *= 0.95;
+    }
+
+    const loopWidth = getLoopWidth();
+
+    if (position <= -loopWidth) position += loopWidth;
+    if (position >= 0) position -= loopWidth;
+
+    track.style.transform = `translateX(${position}px)`;
+
+    requestAnimationFrame(animateCarousel);
+}
+
+animateCarousel();
+
+function startDrag(x) {
+    isDragging = true;
+    lastX = x;
+    velocity = 0;
+    containerS.style.cursor = 'grabbing';
+}
+
+function dragMove(x) {
+    if (!isDragging) return;
+    const delta = x - lastX;
+    position += delta;
+    velocity = delta;
+    lastX = x;
+}
+
+function endDrag() {
+    isDragging = false;
+    containerS.style.cursor = 'grab';
+}
+
+containerS.addEventListener('mousedown', e => startDrag(e.pageX));
+containerS.addEventListener('mousemove', e => dragMove(e.pageX));
+containerS.addEventListener('mouseup', endDrag);
+containerS.addEventListener('mouseleave', endDrag);
+
+containerS.addEventListener('touchstart', e => startDrag(e.touches[0].pageX), { passive: true });
+containerS.addEventListener('touchmove', e => dragMove(e.touches[0].pageX), { passive: true });
+containerS.addEventListener('touchend', endDrag);
+
+containerS.style.cursor = 'grab';
+
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});

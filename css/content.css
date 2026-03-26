@@ -1116,7 +1116,13 @@ body {
     font-size: 1.4rem;
 }
 
+.track.dragging {
+    animation: none !important;
+    cursor: grabbing;
+}
+
 .scroller-container {
+    cursor: grab;
     position: absolute;
     height: 220px;
     width: 100%;
@@ -1147,11 +1153,11 @@ body {
     width: max-content;
     margin-top: 13px;
 
-    animation: scroll 35s linear infinite;
+    /*animation: scroll 35s linear infinite;*/
 }
 
 .track:hover {
-    animation-play-state: paused;
+    /*animation-play-state: paused;*/
 }
 
 .card {
@@ -1177,7 +1183,6 @@ body {
 
 .card:hover {
     text-shadow: 0 0 15px #ffffffbc;
-    cursor:help;
     transition: .2s ease-in-out;
     transform: translateY(-2.5px);
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.134);
@@ -1566,19 +1571,158 @@ footer{
 
 
 /* WINDOW RESIZING + OTHER CONFIG */
-@media screen and (max-width: 768px){
-    .abouttext p, .abouttext2 p{
+@media only screen and (max-width: 768px) {
+
+    .navbar {
+        top: 0;
+        left: 0;
+        transform: none;
+        flex-direction: column;
+        width: 65%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px;
+        gap: 20px;
+        border-radius: 0;
+        backdrop-filter: blur(10px);
+        box-shadow: none;
+        overflow-y: auto;
+        z-index: 100;
+        position: fixed;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+
+    .navbar.active {
+        transform: translateX(0);
+    }
+
+    .nav-home, .nav-github, .nav-tabs {
+        width: 100%;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+    .nav-home{
+        margin-top: 60px;
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+    }
+
+    .nav-tab.active{
+        background: linear-gradient(
+            to right,
+            #848baa3d,
+            #b1b9db54
+        );
+        opacity: .9;
+    }
+
+    .forum-post{
+        display: none;
+    }
+
+    .menu-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .menu-icon {
+        font-size: 1.8rem;
+    }
+
+    .landingtext {
+        padding-left: 5%;
+        padding-top: 15vh;
+        font-size: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        margin-right: 0;
+        font-size: clamp(0.5em, 3vw, 1rem);
+    }
+
+    .hero-description {
+        position: relative;
+        padding-left: 5%;
+        margin-right: 5%;
+        font-size: clamp(0.5em, 3vw, 0.9rem);
+    }
+
+    .hero-contact {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .abouttext p, .abouttext2 p {
+        position: relative;
+        margin-left: 5%;
+        max-width: 90%;
+        padding-top: 2rem;
         font-size: 0.9rem;
     }
 
-}
+    .aboutphoto1, .aboutphoto2 {
+        width: 90%;
+        height: auto;
+        margin: 2rem auto;
+        transform: none;
+    }
 
-@media screen and (max-width: 768px){
-    .aboutphoto1{
-        max-width: 15rem;
-        max-height: 15rem
+    .slides {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .slide {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #threeSection, #container3D {
+        height: 250px;
+    }
+
+    .meshbtns {
+        flex-direction: column;
+        gap: 10px;
     }
 }
+
+
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 150;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
+
+.hamburger.active i {
+    transform: rotate(90deg);
+    transition: 0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+
+
 
 footer{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1589,29 +1733,3 @@ footer{
     background-color: rgba(53, 52, 52, 0.818);
     height: auto;
 }
-
-/*
-.footerdisc{
-    width: 100%;
-    opacity: .8;
-    display: flex;
-    justify-content: center;
-    padding-top: 1vh;
-}
-
-.footerlinks{
-    width: 100%;
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-}
-
-.footerlinks a{
-    text-decoration: none;
-    color: white;
-    text-decoration-color: white;
-    text-decoration: none;
-    padding: 1vh 10vw;
-    display: flex;
-    text-wrap-mode: nowrap;
-}/*
