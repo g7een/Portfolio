@@ -388,14 +388,14 @@ let lastX = 0;
 let velocity = 0;
 
 function getLoopWidth() {
-    return track.scrollWidth / 2;
+    return track.scrollWidth/2;
 }
 
 function animateCarousel() {
     if (!isDragging) {
-        position -= speed;
-        position += velocity;
-        velocity *= 0.95;
+        position-= speed;
+        position+= velocity;
+        velocity*= 0.95;
     }
 
     const loopWidth = getLoopWidth();

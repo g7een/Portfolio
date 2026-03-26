@@ -251,7 +251,7 @@ body {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-1050%);
+        transform: translateX(-24vw);
     }
 }
 
@@ -308,8 +308,9 @@ body {
 }
 
 .scroll-down p{
-    margin-bottom: .6rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: .4rem;
+    font-weight: 550;
+    font-style: italic;
 }
 
 .scroll-down{
@@ -331,7 +332,6 @@ body {
 }
 
 .hero-description{
-    font-size: 1.005rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: auto;
 
@@ -340,10 +340,6 @@ body {
 
     justify-content: center;
     position: absolute;
-}
-
-.hero-software{
-    display: inline;
 }
 
 .desc-wrapper{
@@ -380,19 +376,19 @@ body {
 }
 
 .hero-disclaimer{
-    font-size: .6rem;
+    font-size: .5rem;
 }
 
 .hero {
-    font-size: clamp(0.6em, 2vw, 1.2rem);
+    font-size: clamp(0.6em, .8vw, 1.2rem);
 }
 
 .hero-description {
-    font-size: clamp(0.6rem, 1.5vw, 1rem);
+    font-size: clamp(0.6rem, .6vw, 1rem);
 }
 
 .hero-contact {
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 5vw, 2rem);
 }
 /*--------------------------*/
 
@@ -406,7 +402,6 @@ body {
     width: 100%;
     background-size: cover;
     background-position: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
     background: transparent;
     background-image: linear-gradient(
@@ -448,7 +443,6 @@ body {
 
     max-width: 35vw;
 
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1rem;
     animation: textAppear 0.1s ease-out;
     animation-timeline: view();
@@ -1024,20 +1018,6 @@ body {
 }
 
 /* ------------------------------ */
-
-.scroll-down p{
-    margin-bottom: .6rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.scroll-down{
-    color: #f7faff73
-}
-
-.scroll-down i{
-    animation: bounce 2s infinite;
-}
-
 .hero{
     font-size: 1.1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1060,8 +1040,10 @@ body {
     position: absolute;
 }
 
-.hero-software{
-    display: inline;
+.hero-software img{
+    transform: translateY(1px);
+    width: auto;
+    cursor:pointer;
 }
 
 .desc-wrapper{
@@ -1387,7 +1369,8 @@ body {
 }
 
 .blogcontent{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
     font-size: 1.05rem;
     width: 25rem;
     margin-left: 10%;
@@ -1531,6 +1514,9 @@ body {
 }
 /*---------------------------------------*/
 
+.scroll-top {
+    display: none;
+}
 
 /* WEBSITE FOOTER */
 footer{
@@ -1549,6 +1535,7 @@ footer{
     display: flex;
     justify-content: center;
     padding-top: 1vh;
+    font-style: italic;
 }
 
 .footerlinks{
@@ -1566,12 +1553,36 @@ footer{
     padding: 1vh 10vw;
     display: flex;
     text-wrap-mode: nowrap;
+    gap:5px;
+}
+
+.footerlinks i{
+    transform: translateY(20%);
+}
+
+.fa-brands.fa-github{
+    transform: translateY(11%);
 }
 /*----------------*/
 
 
 /* WINDOW RESIZING + OTHER CONFIG */
 @media only screen and (max-width: 768px) {
+    
+    
+    .abouttext p {
+        margin-top: 100px;
+    }
+    
+    .aboutphoto1, .aboutphoto2{
+        height: 20vh;
+        color: red;
+        animation: none;
+    }
+
+    .nav-bear {
+        display: none;
+    }
 
     .navbar {
         top: 0;
@@ -1649,11 +1660,7 @@ footer{
         position: relative;
         padding-left: 5%;
         margin-right: 5%;
-        font-size: clamp(0.5em, 3vw, 0.9rem);
-    }
-
-    .hero-contact {
-        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-size: clamp(0.2em, 3vw, 0.9rem);
     }
 
     .abouttext p, .abouttext2 p {
@@ -1666,7 +1673,6 @@ footer{
 
     .aboutphoto1, .aboutphoto2 {
         width: 90%;
-        height: auto;
         margin: 2rem auto;
         transform: none;
     }
