@@ -115,8 +115,59 @@ body {
     animation: loaderAnim 3s linear forwards;
 }
 
+.load-bear {
+    transform: translateX(-50%);
+    width: 90px;
+    position: absolute;
+    top: 1.1%;
+    left: 850px;
+    top: 450px;
+    z-index: 20;
+}
 
+.a-load{
+    transform: translateX(-50%);
+    position: absolute;
+    left: 920px;
+    top: 520px;
+    z-index: 10;
+}
 
+.m-load{
+    transform: translateX(-50%);
+    position: absolute;
+    left: 920px;
+    top: 520px;
+    z-index: 10;
+}
+
+.i-load{
+    transform: translateX(-50%);
+    position: absolute;
+    left: 920px;
+    top: 520px;
+    z-index: 10;
+}
+
+.t-load{
+    transform: translateX(-50%);
+    position: absolute;
+    left: 920px;
+    top: 520px;
+    z-index: 10;
+}
+
+.stage1-load{
+
+}
+
+.stage2-load{
+
+}
+
+.stage3-load{
+
+}
 
 
 /* ---------------- */
@@ -245,33 +296,29 @@ body {
 }
 
 /* Scrollbar Functions */
-::-webkit-scrollbar{
-    width: .8rem;
-    animation: scrollbarAppear 3s linear forwards;
-    z-index: 1;
-    background-color: transparent;
-    
+::-webkit-scrollbar {
+  width: .8rem;
+  background: transparent;
 }
-
-::-webkit-scrollbar-track{
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb{
-    background: #747474c2;
-    border-radius: 22px;
-    background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background: #878686db;
-    transition: 0.5s;
-    -webkit-box-shadow: inset 0 0 20px rgba(255, 246, 246, 0.5);
-}
-
+::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
   background: transparent;
-  border-radius: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(116,116,116,0.76);
+  border-radius: 22px;
+  border: 6px solid transparent; 
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(135,136,134,0.86);
+  box-shadow: inset 0 0 20px rgba(255,246,246,0.5);
+  transition: 0.3s;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(116,116,116,0.76) transparent;
 }
 
 
@@ -1793,27 +1840,3 @@ footer{
     height: auto;
 }
 
-::-webkit-scrollbar {
-  width: .8rem;
-  background: transparent;
-}
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(116,116,116,0.76);
-  border-radius: 22px;
-  border: 6px solid transparent; 
-  background-clip: padding-box;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(135,136,134,0.86);
-  box-shadow: inset 0 0 20px rgba(255,246,246,0.5);
-  transition: 0.3s;
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(116,116,116,0.76) transparent;
-}
