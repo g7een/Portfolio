@@ -92,7 +92,6 @@ body {
     }
     100%{
         opacity: 0;
-        width: 150%;
         display: none;
     }
 }
@@ -112,7 +111,7 @@ body {
 
 /* LOADER ANIMATION */
 .loader{
-    animation: loaderAnim 3s linear forwards;
+    animation: loaderAnim 8s linear forwards;
 }
 
 .load-bear {
@@ -120,9 +119,10 @@ body {
     width: 90px;
     position: absolute;
     top: 1.1%;
-    left: 850px;
-    top: 450px;
+    left: 1230px;
+    top: 660px;
     z-index: 20;
+    animation: bearWalk 7.5s ease forwards;
 }
 
 .a-load{
@@ -131,42 +131,103 @@ body {
     left: 920px;
     top: 520px;
     z-index: 10;
+    opacity: 0;
+    animation: loadLetters 4s ease 6.0s forwards;
 }
 
 .m-load{
     transform: translateX(-50%);
     position: absolute;
-    left: 920px;
-    top: 520px;
+    left: 1000px;
+    top: 590px;
     z-index: 10;
+    opacity: 0;
+    animation: loadLetters 4s ease 4.5s forwards;
 }
 
 .i-load{
     transform: translateX(-50%);
     position: absolute;
-    left: 920px;
-    top: 520px;
+    left: 1120px;
+    top: 610px;
     z-index: 10;
+    opacity: 0;
+    animation: loadLetters 4s ease 2.5s forwards;
 }
 
 .t-load{
     transform: translateX(-50%);
     position: absolute;
-    left: 920px;
-    top: 520px;
+    left: 1220px;
+    top: 680px;
     z-index: 10;
+    opacity: 0;
+    animation: loadLetters 4s ease .2s forwards;
 }
 
 .stage1-load{
-
+    transform: translateX(-50%);
+    position: absolute;
+    left: 1170px;
+    top: 630px;
+    z-index: 10;
+    opacity: 0;
+    animation: loadStages 3s ease .3s forwards;
 }
 
 .stage2-load{
-
+    transform: translateX(-50%);
+    position: absolute;
+    left: 1065px;
+    top: 592px;
+    z-index: 10;
+    opacity: 0;
+    animation: loadStages 3s ease 3.2s forwards;
 }
 
 .stage3-load{
+    transform: translateX(-50%);
+    position: absolute;
+    left: 955px;
+    top: 545px;
+    z-index: 10;
+    opacity: 0;
+    animation: loadStages 3s ease 5s forwards;
+}
 
+@keyframes bearWalk{
+    33%{
+        left: 1120px;
+        top: 590px;
+        transform: rotate(-5deg);
+    }
+    66%{
+        left: 1000px;
+        top: 565px;
+        
+    }
+    100%{
+        left: 860px;
+        top: 470px;
+    }
+}
+
+@keyframes loadLetters{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes loadStages {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 
@@ -493,6 +554,11 @@ html {
 .hero-contact {
     font-size: clamp(1.2rem, 5vw, 2rem);
 }
+
+/* COLLAGE CONTAINER */
+
+
+
 /*--------------------------*/
 
 
@@ -1840,3 +1906,169 @@ footer{
     height: auto;
 }
 
+
+.hero-collage{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.collage-item{
+    position: absolute;
+    width: 360px;
+    height: 180px;
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+
+    animation: floatMove 12s ease-in-out infinite alternate;
+}
+
+
+.collage-item *{
+    pointer-events: auto;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+
+.collage-item:nth-child(1){
+    top: 10%;
+    left: 5%;
+    animation-duration: 14s;
+    transform: scale(1.1);
+}
+
+.collage-item:nth-child(2){
+    top: 45%;
+    left:35%;
+    animation-duration: 18s;
+    transform: scale(0.9);
+}
+
+.collage-item:nth-child(3){
+    top: 35%;
+    left: 80%;
+    animation-duration: 16s;
+    transform: scale(1.2);
+}
+
+.collage-item:nth-child(4){
+    top: 70%;
+    left: 5%;
+    animation-duration: 20s;
+    transform: scale(0.85);
+}
+
+.collage-item:nth-child(5){
+    top: 70%;
+    left: 75%;
+    animation-duration: 17s;
+    transform: scale(1);
+}
+
+
+@keyframes floatMove{
+    0%{
+        transform: translateY(0px) translateX(0px) rotateZ(0deg);
+    }
+    50%{
+        transform: translateY(-20px) translateX(10px);
+    }
+    100%{
+        transform: translateY(15px) translateX(-10px);
+    }
+}
+
+.collage-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.collage-item:hover{
+    transform: scale(1.15) rotateY(12deg) rotateX(6deg);
+    z-index: 10;
+    opacity: 1;
+}
+
+.collage-item:hover img{
+    transform: scale(1.1);
+}
+
+
+
+.collage-item:hover .collage-info{
+    transform: translateY(0);
+}
+
+
+.hero-collage{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.collage-item{
+    position: absolute;
+    width: 240px;
+    height: 160px;
+
+    border-radius: 2px;
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease, filter 0.3s ease;
+
+    animation: floatMove 12s ease-in-out infinite alternate;
+}
+
+.collage-item *{
+    pointer-events: auto;
+}
+
+
+@keyframes floatMove{
+    0%{ transform: translateY(0px) translateX(0px); }
+    50%{ transform: translateY(-20px) translateX(10px); }
+    100%{ transform: translateY(15px) translateX(-10px); }
+}
+
+
+.collage-item:hover{
+    transform: scale(1.2) rotateY(10deg) rotateX(6deg);
+    z-index: 20;
+    filter: brightness(1.1);
+    box-shadow: 6px 10px 20px rgba(0,0,0,0.2);
+    transition: 0.5s ease;
+}
+
+.collage-item:hover img{
+    transform: scale(1.1);
+}
+
+.mouse-info{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    font-style: italic;
+
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+
+    border-radius: 8px;
+    pointer-events: none;
+
+    opacity: 0;
+    transform: translate(-50%, -120%);
+    transition: opacity 0.2s ease;
+
+    white-space: nowrap;
+    z-index: 1000;
+}

@@ -448,3 +448,36 @@ hamburger.addEventListener('click', () => {
     navbar.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
+
+
+
+const collage = document.getElementById("collage");
+const items = document.querySelectorAll(".collage-item");
+const mouseInfo = document.getElementById("mouseInfo");
+
+
+document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+    items.forEach((item, i) => {
+        const depth = (i + 1) * 0.3;
+        item.style.transform += ` translate(${x * depth}px, ${y * depth}px)`;
+    });
+
+    mouseInfo.style.left = e.clientX + "px";
+    mouseInfo.style.top = e.clientY + "px";
+});
+
+
+
+items.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+        mouseInfo.textContent = item.dataset.info;
+        mouseInfo.style.opacity = 1;
+    });
+
+    item.addEventListener("mouseleave", () => {
+        mouseInfo.style.opacity = 0;
+    });
+});
