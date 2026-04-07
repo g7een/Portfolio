@@ -456,17 +456,31 @@ const items = document.querySelectorAll(".collage-item");
 const mouseInfo = document.getElementById("mouseInfo");
 
 
-document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX/window.innerWidth - 0.5) * 20;
-    const y = (e.clientY/window.innerHeight - 0.5) * 20;
+items.forEach(item => {
+    item.addEventListener("mousemove", (e) => {
+        const rect = item.getBoundingClientRect();
 
-    items.forEach((item, i) => {
-        const depth = (i + 1) * 0.3;
-        item.style.transform += ` translate(${x * depth}px, ${y * depth}px)`;
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const midX = x / rect.width - 0.5;
+        const midY = y / rect.height - 0.5;
+
+        const rotateX = -midY * 20;
+        const rotateY = midX * 20;
+
+        item.style.transform = `
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            scale(1.08)
+        `;
+
+        item.style.setProperty("--gx", `${x}px`);
+        item.style.setProperty("--gy", `${y}px`);
+
+        mouseInfo.style.left = e.clientX + "px";
+        mouseInfo.style.top = e.clientY + "px";
     });
-
-    mouseInfo.style.left = e.clientX + "px";
-    mouseInfo.style.top = e.clientY + "px";
 });
 
 
