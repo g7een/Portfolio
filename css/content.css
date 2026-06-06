@@ -164,8 +164,8 @@ a{
     color:rgba(0, 0, 0, 0.296);
 }
 
-.item-description{
-    font-size: 14px;
+.models-gallery{
+    height:auto;
 }
 
 .contactform{
@@ -200,9 +200,11 @@ label {
     font-size: 14px;
     font-weight: 600;
     text-transform: lowercase;
+    color:#878787;
 }
 
 input, textarea {
+    background: #c9c9c94a;
     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size: 14px;
     width: 100%;
@@ -233,7 +235,7 @@ textarea {
     text-align: right;
     margin-top: 8px;
     font-size: 13px;
-    color: #000;
+    color:#878787;
 }
 
 .submit-btn {
