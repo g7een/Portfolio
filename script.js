@@ -38,3 +38,31 @@ subjectInput.addEventListener("input", () => {
 messageInput.addEventListener("input", () => {
     updateCounter(messageInput, messageCount, 150);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const tabs = {
+        about: document.querySelector(".about"),
+        models: document.querySelector(".models"),
+        projects: document.querySelector(".projects"),
+        contact: document.querySelector(".contact")
+    };
+
+    const sections = {
+        about: document.querySelector(".aboutsection"),
+        models: document.querySelector(".viewmodels"),
+        projects: document.querySelector(".viewprojects"),
+        contact: document.querySelector(".contactform")
+    };
+
+
+    Object.keys(tabs).forEach(section => {
+        tabs[section].addEventListener("click", () => {
+            sections[section].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+});
