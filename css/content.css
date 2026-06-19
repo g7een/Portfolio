@@ -31,6 +31,10 @@ a{
     color: rgb(46, 131, 196)
 }
 
+.date{
+    color: #333333d1;
+}
+
 .horizontal-rule{
     display: flex;
     align-items: center;
